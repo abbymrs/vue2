@@ -37,11 +37,13 @@ export default {
       ]
     };
   },
-  computed: mapState(["isLogin", "user"]),
+  computed: {
+    ...mapState(["isLogin", "user"]),
+  },
   methods: {
     ...mapMutations(["setLogin"]),
     login() {
-      this.$router.push({ name: "Login" });
+      this.$router.push({ name: "login" });
     },
     logout() {
       this.setLogin(false);

@@ -3,16 +3,17 @@ import store from '../store/index';
 
 const baseUrl = '/api/';
 
-http.interceptors.request.use(req=>{
+http.interceptors.request.use(req => {
     store.state.activeCalls++;
     return req;
-}, err=>{
+}, err => {
     return Promose.reject(err);
 });
-http.interceptors.response.use(res=>{
+http.interceptors.response.use(res => {
     store.state.activeCalls--;
     return res;
-}, err=>{
+}, err => {
     store.state.activeCalls--;
+    store.state.hasError = true;
     return Promise.reject(err);
 });

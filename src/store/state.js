@@ -1,5 +1,7 @@
 export default {
     activeCalls: 0,
     user: null,
-    isLogin: false
+    isLogin: false,
+    redirectUrl: null,
+    hasError: false
 };

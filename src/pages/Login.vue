@@ -48,8 +48,8 @@ export default {
       },
       ...mapMutations([
           'setUser',
-          'setLogin'
-      ])
+          'setLogin',
+      ]),
   }
 }
 </script>
