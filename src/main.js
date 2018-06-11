@@ -11,7 +11,7 @@ import './interceptor/http-interceptor';
 
 router.beforeEach((to, from, next) => {
     // reset hasError = false;
-    store.state.hasError = false;
+    store.commit('setError', false);
     next();
 });
 

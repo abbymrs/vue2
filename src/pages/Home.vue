@@ -3,6 +3,7 @@
 </template>
 <script>
 import apiService from '../service/api.service';
+import { mapMutations } from 'vuex';
 
 export default {
     mounted(){
@@ -12,7 +13,13 @@ export default {
             })
             .catch(err=>{
                 console.log(err);
+                this.setErrorMsg(err.response.data.msg);
             })
+    },
+    methods: {
+        ...mapMutations([
+            'setErrorMsg'
+        ])
     }
 };
 </script>

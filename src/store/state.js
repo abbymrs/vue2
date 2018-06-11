@@ -3,5 +3,6 @@ export default {
     user: null,
     isLogin: false,
     redirectUrl: null,
-    hasError: false
+    hasError: false,
+    errorMsg: ''
 };

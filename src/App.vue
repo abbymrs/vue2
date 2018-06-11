@@ -3,7 +3,7 @@
         <my-header></my-header>
         <router-view v-show="activeCalls<=0 && !hasError" />
         <div v-show="activeCalls>0">Loading......</div>
-        <error v-show="hasError" msg="error"></error>
+        <error v-show="hasError" :msg="errorMsg"></error>
     </div>
 </template>
 
@@ -21,7 +21,8 @@ export default {
     computed: mapState([
         // 映射 this.activeCalls 为 store.state.activeCalls
         "activeCalls",
-        "hasError"
+        "hasError",
+        'errorMsg'
     ])
 };
 </script>
