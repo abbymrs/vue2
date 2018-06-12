@@ -16,6 +16,7 @@
 <script>
 import { mapMutations, mapState } from 'vuex';
 import apiService from '../service/api.service';
+import store from "../store/index";
 
 export default {
   data(){
@@ -39,7 +40,7 @@ export default {
                 this.setUser(data.user);
                 if(data.status === 1){
                     this.setLogin(true);
-                    this.$router.push({name: 'Home'});
+                    this.$router.push({name: store.state.redirectUrl});
                 }
             })
             .catch(err=>{

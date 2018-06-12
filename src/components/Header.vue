@@ -23,15 +23,15 @@ export default {
     return {
       menus: [
         {
-          name: "Home",
+          name: "home",
           path: "/home"
         },
         {
-          name: "Profile",
+          name: "profile",
           path: "/profile"
         },
         {
-          name: "Products",
+          name: "products",
           path: "/products"
         }
       ]
@@ -47,7 +47,7 @@ export default {
     },
     logout() {
       this.setLogin(false);
-      this.$router.push({ name: "Home" });
+      this.$router.push({ name: "home" });
     }
   }
 };
