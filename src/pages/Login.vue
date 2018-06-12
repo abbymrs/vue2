@@ -38,8 +38,10 @@ export default {
                 // console.log(res);
                 let data = res.data;
                 this.setUser(data.user);
+                localStorage.setItem('user', JSON.stringify(data.user));
                 if(data.status === 1){
                     this.setLogin(true);
+                    localStorage.setItem('isLogin', true);
                     this.$router.push({name: store.state.redirectUrl});
                 }
             })

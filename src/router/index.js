@@ -10,7 +10,16 @@ const Profile = r => require.ensure([], () => r(require('@/pages/Profile.vue')),
 const Products = r => require.ensure([], () => r(require('@/pages/Products.vue')), 'Products');
 const Login = r => require.ensure([], () => r(require('@/pages/Login.vue')), 'Login');
 
-Vue.use(Router)
+Vue.use(Router);
+
+const isLogin = localStorage.getItem('isLogin');
+const userStr = localStorage.getItem('user');
+const user = JSON.parse(userStr);
+
+if (isLogin === 'true') {
+    store.commit('setLogin', true);
+    store.commit('setUser', user);
+}
 
 let router = new Router({
     routes: [{

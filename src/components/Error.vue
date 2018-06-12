@@ -1,9 +1,13 @@
 <template>
-    <h1>{{msg}}</h1>
+    <h1>{{errorMsg}}</h1>
 </template>
 <script>
+import { mapState } from "vuex";
+
 export default {
-    props: ['msg']
+    computed: mapState([
+        'errorMsg'
+    ])
 }
 </script>
 <style lang="scss">
